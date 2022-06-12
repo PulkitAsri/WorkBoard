@@ -53,9 +53,9 @@ const TaskComponent = ({ task, type }) => {
 								IconComponent={null}
 								variant="standard"
               >
-                <MenuItem disabled={type==="todoTasks"} onClick={()=> handleSendTo("inProgressTasks")}>{options[0]}</MenuItem>
-                <MenuItem disabled={type==="inProgressTasks"} onClick={ ()=> handleSendTo("completeTasks") }>{options[1]}</MenuItem>
-                <MenuItem disabled={type==="completeTasks"} onClick={ ()=> handleSendTo("todoTasks") }>{options[2]}</MenuItem>
+                <MenuItem disabled={type==="todoTasks"} onClick={()=> handleSendTo("todoTasks")}>{options[0]}</MenuItem>
+                <MenuItem disabled={type==="inProgressTasks"} onClick={ ()=> handleSendTo("inProgressTasks") }>{options[1]}</MenuItem>
+                <MenuItem disabled={type==="completeTasks"} onClick={ ()=> handleSendTo("completeTasks") }>{options[2]}</MenuItem>
               </Select>
             </FormControl>
           </div>

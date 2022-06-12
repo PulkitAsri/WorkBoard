@@ -39,7 +39,8 @@ const TaskComponent = ({ task, type }) => {
         <div className="taskBody">
           <h2>{task.title}</h2>
           {/* <span>{task.id}</span> */}
-          <div className="options_container">
+        </div>
+				<div className="options_container">
             <IconButton size="small" aria-label="delete" onClick={handleDelete}>
               <Delete />
             </IconButton>
@@ -59,7 +60,6 @@ const TaskComponent = ({ task, type }) => {
               </Select>
             </FormControl>
           </div>
-        </div>
 
         {/* <button onClick={ handleDelete }>🗑</button>
 			<button onClick={()=> handleSendTo("inProgressTasks")}>toIP</button>

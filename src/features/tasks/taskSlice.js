@@ -11,7 +11,7 @@ const taskSlice = createSlice({
         inProgressTasks:[
             { id: 4, title: "todo4"},
         ],
-        completeTasks:[
+        completedTasks:[
             { id: 5, title: "Structure Basic Code"},
             { id: 6, title: "New Redux Implementation (redux toolkit)"},
             { id: 7, title: "Methods to handle state"},

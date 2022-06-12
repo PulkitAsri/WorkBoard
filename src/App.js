@@ -44,7 +44,7 @@ function App() {
       <div className="work_area">
         <ColumnPane type="todoTasks" searchText={searchTaskInputText} />
         <ColumnPane type="inProgressTasks" searchText={searchTaskInputText} />
-        <ColumnPane type="completeTasks" searchText={searchTaskInputText} />
+        <ColumnPane type="completedTasks" searchText={searchTaskInputText} />
       </div>
 
       <div className="add_task_area">

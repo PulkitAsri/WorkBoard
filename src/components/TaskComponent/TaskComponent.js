@@ -56,14 +56,14 @@ const TaskComponent = ({ task, type }) => {
               >
                 <MenuItem disabled={type==="todoTasks"} onClick={()=> handleSendTo("todoTasks")}>{options[0]}</MenuItem>
                 <MenuItem disabled={type==="inProgressTasks"} onClick={ ()=> handleSendTo("inProgressTasks") }>{options[1]}</MenuItem>
-                <MenuItem disabled={type==="completeTasks"} onClick={ ()=> handleSendTo("completeTasks") }>{options[2]}</MenuItem>
+                <MenuItem disabled={type==="completedTasks"} onClick={ ()=> handleSendTo("completedTasks") }>{options[2]}</MenuItem>
               </Select>
             </FormControl>
           </div>
 
         {/* <button onClick={ handleDelete }>🗑</button>
 			<button onClick={()=> handleSendTo("inProgressTasks")}>toIP</button>
-			<button onClick={ ()=> handleSendTo("completeTasks") }>toDone</button> */}
+			<button onClick={ ()=> handleSendTo("completedTasks") }>toDone</button> */}
 
         {/* <Menu
         id="basic-menu"
@@ -84,4 +84,4 @@ const TaskComponent = ({ task, type }) => {
 export default TaskComponent;
 // dispatch(send({id: task.id, currentState: type, destinationState:"inProgressTasks"}))
 // ()=> handleSendTo("inProgressTasks")
-// ()=> handleSendTo("completeTasks")
+// ()=> handleSendTo("completedTasks")

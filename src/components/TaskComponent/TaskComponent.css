@@ -1,0 +1,66 @@
+
+h2{
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: 'Reenie Beanie';
+}
+
+/* .taskContainer{
+
+    margin-top:1em;
+} */
+
+
+.taskBody{  
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:5em;
+    width:5em;
+    padding: 0.3em;
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    transition: transform .15s linear;
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    z-index: 0;
+    margin : 10px
+}
+
+.taskBody:hover, .taskBody:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.5);
+    position:relative;
+    z-index:5;
+}
+/* 
+.delete_button{
+    margin: 0;
+} */
+
+.options_container{
+    display: flex;
+    flex-direction: row;
+}
+
+#basic-menu{
+    z-index: 6;
+}
+
+
+/* .taskContainer:nth-child(even) a{
+    transform:rotate(90deg);
+    position:relative;
+    top:5px;
+}
+.taskContainer:nth-child(3n) a{
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+}
+.taskContainer:nth-child(5n) a{
+    transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+}  */

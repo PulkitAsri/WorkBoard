@@ -1,56 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+import { useDispatch } from "react-redux";
+import { addTodoTask } from "./features/tasks/taskSlice";
+
+import ColumnPane from "./components/ColumnPane/ColumnPane";
+import { Button, IconButton, TextField } from "@mui/material";
+import { Search } from "@mui/icons-material";
 
 function App() {
+  const [taskInputText, setTaskInputText] = useState("");
+  const [searchTaskInputText, setSearchTaskInputText] = useState("");
+
+  const dispatch = useDispatch();
+
+  const handleAddTodo = () => {
+    // console.log(taskInputText);
+    dispatch(
+      addTodoTask({
+        title: taskInputText,
+      })
+    );
+    setTaskInputText("");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <div className="search_task_area">
+        <TextField
+          id="filled-search"
+          label="Search Tasks"
+          type="search"
+          variant="standard"
+          size="small"
+          value={searchTaskInputText}
+          onChange={(e) => setSearchTaskInputText(e.target.value)}
+        />
+        <IconButton size="small">
+          <Search />
+        </IconButton>
+      </div>
+
+      <div className="work_area">
+        <ColumnPane type="todoTasks" searchText={searchTaskInputText} />
+        <ColumnPane type="inProgressTasks" searchText={searchTaskInputText} />
+        <ColumnPane type="completeTasks" searchText={searchTaskInputText} />
+      </div>
+
+      <div className="add_task_area">
+        <TextField
+          id="standard-basic"
+          label="Enter Task"
+          variant="standard"
+          size="small"
+          value={taskInputText}
+          onChange={(e) => setTaskInputText(e.target.value)}
+        />
+        <Button variant="contained" size="small" onClick={handleAddTodo}>
+          Add Todo
+        </Button>
+      </div>
+      {/* <Menu /> */}
     </div>
   );
 }

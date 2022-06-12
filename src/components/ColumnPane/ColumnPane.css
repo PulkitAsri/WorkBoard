@@ -1,0 +1,28 @@
+
+h1{
+    font-size: 2vw;
+}
+
+.column_pane{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    background-color:antiquewhite;
+    border-radius: 20px;
+    border: 2px solid grey;
+    overflow: hidden ;
+    margin: 10px;
+    
+}
+.tasks_wrapper{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; */
+    padding: 10;
+    /* overflow-y: scroll; */
+    
+}
